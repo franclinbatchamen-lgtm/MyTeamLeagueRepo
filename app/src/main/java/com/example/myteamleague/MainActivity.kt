@@ -1,4 +1,4 @@
-package com.example.myteam
+package com.example.myteamleague
 
 import android.os.Bundle
 import android.widget.TextView
@@ -10,20 +10,11 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     // teams
-    val teams = arrayof<String>("Barcelona",
+    val teams = arrayOf<String>("Barcelona",
         "Real Madrid",
         "Atletico Madrid",
         "Arsenal",
         "Man United")
-
-    private fun arrayof(
-        string: String,
-        string2: String,
-        string3: String,
-        string4: String,
-        string5: String
-    ) {
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         teamsTextView.text = teams[0]
 
-        teams[0] = "Real Madrid"
+        teams[0] = "Barcelona"
 
 
 
