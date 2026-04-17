@@ -1,6 +1,8 @@
 package com.example.myteamleague
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,16 +18,42 @@ class MainActivity : AppCompatActivity() {
         "Arsenal",
         "Man United")
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val teamsTextView = findViewById<TextView>(R.id.teamsTextView)
+        val teamsTextView = findViewById<TextView>(R.id.teamDisplay)
 
         teamsTextView.text = teams[0]
 
         teams[0] = "Barcelona"
+
+        var teamDisplay = ""
+        var counter = 0
+        while (counter < teams.size) {
+            teamDisplay += teams[counter] + "\n"
+            counter++
+
+        }
+        fun getShortestString(strings: List<String>): String? {
+            if (strings.isEmpty()) return null
+
+            var shortest = strings[0]
+
+            for (str in strings) {
+                if (str.length < shortest.length) {
+                    shortest = str
+                }
+            }
+
+            return shortest
+        }
+
+        var shortestName = getShortestString(teams.toList())
+
+        println("shortestName, $shortestName")
 
 
 
